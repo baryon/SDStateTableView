@@ -18,7 +18,7 @@ SDStateTableView is available through [CocoaPods](http://cocoapods.org). To inst
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'SDStateTableView'
+pod 'SDStateTableView', :git=> 'https://github.com/baryon/SDStateTableView.git'
 ```
 ## Usages
 
@@ -31,14 +31,14 @@ stateTableView.setState( .dataAvailable)
 
 #### 2. Empty List
 ```swift
-stateTableView.setState(.withImage(image: "empty_cart", title: "EMPTY CART", message: "Please add some item in your cart first"))
+stateTableView.setState(.withImage(image: UIImage(named: "empty_cart"), title: "EMPTY CART", message: "Please add some item in your cart first"))
 ```
 ![2_EmptyData.png](https://raw.githubusercontent.com/sauvikdolui/SDStateTableView/master/Screenshots/2_EmptyData.png)
 
 
 #### 3. Server Side Error
 ```swift
-stateTableView.setState(.withImage(image: "server_error", title: "SERVER ERROR", message: "We are notified and working on it, we will be back soon"))
+stateTableView.setState(.withImage(image: UIImage(named: "server_error"), title: "SERVER ERROR", message: "We are notified and working on it, we will be back soon"))
 ```
 ![3_ServerError.png](https://raw.githubusercontent.com/sauvikdolui/SDStateTableView/master/Screenshots/3_ServerError.png)
 
@@ -58,13 +58,13 @@ stateTableView.setState(.loading(message: "Loading data..."))
 
 #### 6. No Internet Connection
 ```swift
-stateTableView.setState(.withButton(errorImage: "no_internet", title: "NO INTERNET",
+stateTableView.setState(.withButton(errorImage: UIImage(named: "no_internet"), title: "NO INTERNET",
                       message: "You are not connected to Internet, please try later",
                   buttonTitle: "Try Again",
                  buttonConfig: { (button) in
                                  // You can configure the button here
                                },
-                  retryAction: {
+                  tapAction: {
                            self.stateTableView.setState(.loading(message: "Loading data..."))
                      }))
 ```

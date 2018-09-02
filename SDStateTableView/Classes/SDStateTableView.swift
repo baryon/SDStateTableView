@@ -9,9 +9,9 @@ import Foundation
 public enum SDStateTableViewState {
     case dataAvailable
     case loading(message: String)
-    case withImage(image: String?, title: String?, message: String)
-    case withButton(errorImage: String?, title: String?, message: String, buttonTitle: String,
-        buttonConfig: (UIButton) -> Void, retryAction: () -> Void)
+    case withImage(image: UIImage?, title: String?, message: String)
+    case withButton(image: UIImage?, title: String?, message: String, buttonTitle: String,
+        buttonConfig: (UIButton) -> Void, tapAction: () -> Void)
     case unknown
 }
 
@@ -250,13 +250,13 @@ public class SDStateTableView: UITableView {
         case .loading(let message):
             configureForLoadingData(message: message)
         case .withImage(let image, let title, let message):
-            configureWith(imageFile: image, title: title, message: message)
-        case .withButton(let errorImage, let title, let message, let buttonTitle,
-                         let buttonConfig, let buttonAction):
-            configWithButton(image: errorImage, title: title, message: message,
+            configureWith(image: image, title: title, message: message)
+        case .withButton(let image, let title, let message, let buttonTitle,
+                         let buttonConfig, let tapAction):
+            configWithButton(image: image, title: title, message: message,
                              buttonTitle: buttonTitle,
                              buttonConfig: buttonConfig,
-                             buttonTapAction: buttonAction)
+                             tapAction: tapAction)
         case .unknown:
             ()
         }
@@ -284,12 +284,12 @@ public class SDStateTableView: UITableView {
         dataStateSubtitleLabel.text = message
     }
     
-    private func configureWith(imageFile: String?, title: String?, message: String) {
+    private func configureWith(image: UIImage?, title: String?, message: String) {
         
         // Image View
-        if let imageFile = imageFile {
+        if let image = image {
             stateImageView.isHidden = false
-            stateImageView.image = UIImage(named: imageFile)
+            stateImageView.image = image
         } else {
             stateImageView.isHidden  = true
         }
@@ -310,15 +310,15 @@ public class SDStateTableView: UITableView {
         dataStateSubtitleLabel.text = message
     }
     
-    private func configWithButton(image: String?, title: String?, message: String,
+    private func configWithButton(image: UIImage?, title: String?, message: String,
                                   buttonTitle: String,
                                   buttonConfig: (UIButton) ->Void,
-                                  buttonTapAction: @escaping () -> Void) {
+                                  tapAction: @escaping () -> Void) {
         
-        configureWith(imageFile: image, title: title, message: message)
+        configureWith(image: image, title: title, message: message)
         buttonConfig(actionButton)
         actionButton.isHidden = false
-        buttonAction = buttonTapAction
+        buttonAction = tapAction
         actionButton.setTitle(buttonTitle, for: .normal)
     }
     private func configureForShowinData() {

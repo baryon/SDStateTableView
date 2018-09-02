@@ -28,13 +28,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func noDataAvailableButtonTapped(_ sender: UIButton) {
-        stateTableView.setState(.withImage(image: "empty_cart",
+        stateTableView.setState(.withImage(image: UIImage(named: "empty_cart"),
                                                   title: "EMPTY CART",
                                                   message: "Please add some item in your cart first"))
     }
     
     @IBAction func errorWithImageButtonTapped(_ sender: UIButton) {
-        stateTableView.setState(.withImage(image: "server_error",
+        stateTableView.setState(.withImage(image: UIImage(named: "server_error"),
                                                   title: "SERVER ERROR",
                                                   message: "We are notified and working on it, we will be back soon"))
     }
@@ -48,14 +48,14 @@ class ViewController: UIViewController {
         stateTableView.setState(.loading(message: "Loading data..."))
     }
     @IBAction func noInternetButtonTapped(_ sender: Any) {
-        stateTableView.setState(.withButton(errorImage: "no_internet",
+        stateTableView.setState(.withButton(image: UIImage(named: "no_internet"),
                                                    title: "NO INTERNET",
                                                    message: "You are not connected to Internet, please try later",
                                                    buttonTitle: "Try Again",
                                                    buttonConfig: { (button) in
             // You can configure the button here
         },
-                                                   retryAction: {
+                                                   tapAction: {
             self.stateTableView.setState(.loading(message: "Loading data..."))
         }))
     }
