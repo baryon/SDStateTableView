@@ -403,39 +403,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2FCE42666364EA0C78F9E86A432AF364 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B80BFFED3592DCF005A0B1CBA248A901 /* SDStateTableView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SDStateTableView/SDStateTableView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SDStateTableView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SDStateTableView/SDStateTableView.modulemap";
-				PRODUCT_MODULE_NAME = SDStateTableView;
-				PRODUCT_NAME = SDStateTableView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		6C9C4D2AB22FD65CF99F52D9F4A2AC89 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A6D1D917EAE7A78C502C1A7EF01F3D65 /* Pods-SDStateTableView_Example.debug.xcconfig */;
@@ -531,6 +498,38 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9468002EFD0C46147F9F708B1A4A95E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B80BFFED3592DCF005A0B1CBA248A901 /* SDStateTableView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SDStateTableView/SDStateTableView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SDStateTableView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SDStateTableView/SDStateTableView.modulemap";
+				PRODUCT_MODULE_NAME = SDStateTableView;
+				PRODUCT_NAME = SDStateTableView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
@@ -659,7 +658,7 @@
 			};
 			name = Release;
 		};
-		B7028AA7564FB3AFFD5DCFFD54FBE992 /* Debug */ = {
+		FBB2F0897927759F17DB5E170AD0C1BC /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B80BFFED3592DCF005A0B1CBA248A901 /* SDStateTableView.xcconfig */;
 			buildSettings = {
@@ -683,13 +682,14 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		FC54590704E6B8E53581EBD355225134 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -759,8 +759,8 @@
 		E4522357DA6FC82AB1762B556680C8D4 /* Build configuration list for PBXNativeTarget "SDStateTableView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B7028AA7564FB3AFFD5DCFFD54FBE992 /* Debug */,
-				2FCE42666364EA0C78F9E86A432AF364 /* Release */,
+				9468002EFD0C46147F9F708B1A4A95E5 /* Debug */,
+				FBB2F0897927759F17DB5E170AD0C1BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
